@@ -53,51 +53,51 @@ Sub Object 1: Steering Wheel
     Name 4 things you'll find on the:    Steering Wheel
         1) paddle shifters
         2) 'cruise control' controls
-        3) 
-        4) 
+        3) horn
+        4) wiper arms
     Name 2 things you can do with the:   Steering Wheel
         1) adjust cruise control settings.
-        2)
+        2) speed up wiper
         
 Sub Object 2: Instrument Cluster
     Name 4 things you'll find on the:   Instrument Cluster
-        1)
-        2)
-        3)
-        4)
+        1) speedometer
+        2) temperature gauge
+        3) fuel gauge
+        4) odometer
     Name 3 things you can do with the:   Instrument Cluster
-        1)
-        2)
-        3)
+        1) reset km
+        2) close light warning
+        3) open cluster submenu
     
 Sub Object 3: Environment Controls
     Name 3 things you'll find on the:    Environment Controls
-        1)
-        2)
-        3)
+        1) air conditioner
+        2) mirror heater
+        3) pressure sensor
     Name 3 things you can do with the:   Environment Controls
-        1)
-        2)
-        3)
+        1) set cool down
+        2) open back mirror heater
+        3) close pressure sensor
 
 Sub Object 4: Infotainment System
     Name 3 things you'll find on the:    Infotainment System
-        1)
-        2)
-        3)
+        1) music player
+        2) bluetooth
+        3) gps
     Name 3 things you can do with the:   Infotainment System
-        1)
-        2)
-        3)
+        1) eject cd
+        2) pair device
+        3) set destination
 
 Sub Object 5: Seat 
     Name 3 things you'll find on the:    Seat
-        1)
-        2)
-        3)
+        1) safety belt
+        2) height adjustment
+        3) seat-back angle adjustment
     Name 2 things you can do with the:   Seat
-        1)
-        2)
+        1) push down the lever
+        2) lock safety belt 
 */
 
 /*
@@ -155,59 +155,59 @@ Part 1b Assignment:
 */
 
 /*
-Thing 1)
+Thing 1) Foley Studio
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of foley pits
+    2) number of shoes
+    3) number of cloths
+    4) sound effects recording per day
+    5) edit sfx per day
 3 things it can do:
-    1)
-    2)
-    3)
+    1) record grass sfx
+    2) edit sfx and prepare to mix
+    3) upload sfx to cloud
  */
 
 /*
-Thing 2)
+Thing 2) Field Recorder
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of inputs
+    2) number of outputs
+    3) size of Storage
+    4) supported formats
+    5) additional settings
 3 things it can do:
-    1)
-    2)
-    3)
+    1) instert KM184s to input 1-2
+    2) set 192 khz/32 bit-float
+    3)insert headphone
  */
 
 /*
-Thing 3)
+Thing 3) Smartphone
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) type of CPU
+    2) size of Storage
+    3) number of Simcard
+    4) size of RAM
+    5) size of Screen
 3 things it can do:
-    1)
-    2)
-    3)
+    1) insert Sim-2
+    2) call Charles
+    3) open maps
  */
 
 /*
-Thing 4)
+Thing 4) Ranch
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of animals
+    2) size of ranch
+    3) amount of profit per year
+    4) number of doors
+    5) number of tools
 3 things it can do:
-    1)
-    2)
-    3)
+    1) sell ranch
+    2) open the doors
+    3) free the animals
  */
 
  /*
