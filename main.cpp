@@ -280,17 +280,17 @@ Define an object that is made of 5 sub-objects.
 */
 
 /*
-Thing 10)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+Thing 10) Recording Studio
+5 properties: 
+    1) Recording Room
+    2) Mixing Room
+    3) Waiting Room 
+    4) Employees 
+    5) Kitchen Room
 3 things it can do:
-    1)
-    2)
-    3)
+    1) release album
+    2) record strings
+    3) monthly employee salary
  */
 
 /*
@@ -383,73 +383,73 @@ each property for UDTs 5 - 9.
 */
 
 /*
-Thing 5)
+Thing 5) Recording Room
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of instruments (int)
+    2) monthly air conditioner bill (double) 
+    3) room name (std::string)
+    4) size of room (float)
+    5) number of cables (int)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) records some sounds
+    2) provides energy consumption
+    3) allows communication with the mix room
  */
 
 /*
-Thing 6)
+Thing 6) Mixing Room
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) room name (std::string)
+    2) size of room (float)
+    3) size of speakers (float)
+    4) room acoustic values (double)
+    5) ammount of power consumed (float)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) allows communication with the recording room
+    2) send files to server
+    3) connect to DSP racks
  */
 
 /*
-Thing 7)
+Thing 7) Waiting Room
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of managers (int)
+    2) monthly bill (double)
+    3) room name (std::string)
+    4) locked table (bool)
+    5) coffee machines (int)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) prepare to recording
+    2) give coffee to customers
+    3) set the alarm
  */
 
 /*
-Thing 8)
+Thing 8) Manager
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) age (int)
+    2) height (double)
+    3) name (char)
+    4) gender (char)
+    5) start to work (double)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) keeps track of expenses
+    2) manages the studio
+    3) gets a job
  */
 
 /*
-Thing 9)
+Thing 9) Studio Server Hardware
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) connection speed (float)
+    2) number of ethernet input (int)
+    3) ammount of power consumed (float)
+    4) daily data transfer (float)
+    5) brand (std::string)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) send files
+    2) connect to internet
+    3) create backup
  */
 
 /*
