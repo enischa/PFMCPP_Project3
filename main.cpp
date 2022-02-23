@@ -155,59 +155,7 @@ Part 1b Assignment:
 */
 
 /*
-Thing 1) Foley Studio
-5 properties:
-    1) number of foley pits
-    2) number of shoes
-    3) number of cloths
-    4) sound effects recording per day
-    5) edit sfx per day
-3 things it can do:
-    1) record grass sfx
-    2) edit sfx and prepare to mix
-    3) upload sfx to cloud
- */
 
-/*
-Thing 2) Field Recorder
-5 properties:
-    1) number of inputs
-    2) number of outputs
-    3) size of Storage
-    4) supported formats
-    5) additional settings
-3 things it can do:
-    1) instert KM184s to input 1-2
-    2) set 192 khz/32 bit-float
-    3)insert headphone
- */
-
-/*
-Thing 3) Smartphone
-5 properties:
-    1) type of CPU
-    2) size of Storage
-    3) number of Simcard
-    4) size of RAM
-    5) size of Screen
-3 things it can do:
-    1) insert Sim-2
-    2) call Charles
-    3) open maps
- */
-
-/*
-Thing 4) Ranch
-5 properties:
-    1) number of animals
-    2) size of ranch
-    3) amount of profit per year
-    4) number of doors
-    5) number of tools
-3 things it can do:
-    1) sell ranch
-    2) open the doors
-    3) free the animals
  */
 
  /*
@@ -279,19 +227,7 @@ Define an object that is made of 5 sub-objects.
             brand (std::string)
 */
 
-/*
-Thing 10) Recording Studio
-5 properties: 
-    1) Recording Room
-    2) Mixing Room
-    3) Waiting Room 
-    4) Employees 
-    5) Kitchen Room
-3 things it can do:
-    1) release album
-    2) record strings
-    3) monthly employee salary
- */
+
 
 /*
 Part 1d
@@ -383,6 +319,63 @@ each property for UDTs 5 - 9.
 */
 
 /*
+
+Thing 1) Foley Studio
+5 properties:
+    1) number of foley pits (int)
+    2) number of shoes (int)
+    3) number of cloths (int)
+    4) sound effects recording per day (int)
+    5) edit sfx per day (int)
+3 things it can do:
+    1) record grass sfx
+    2) edit sfx and prepare to mix
+    3) upload sfx to cloud
+ */
+
+/*
+Thing 2) Field Recorder
+5 properties:
+    1) number of inputs (int)
+    2) number of outputs (int)
+    3) size of Storage (float)
+    4) supported formats (float)
+    5) additional settings (int)
+3 things it can do:
+    1) instert KM184s to input 1-2
+    2) set 192 khz/32 bit-float
+    3)insert headphone
+ */
+
+/*
+Thing 3) Smartphone
+5 properties:
+    1) type of CPU (float)
+    2) size of Storage (float)
+    3) number of Simcard (int)
+    4) size of RAM (float)
+    5) size of Screen (float)
+3 things it can do:
+    1) insert Sim-2
+    2) call Charles
+    3) open maps
+ */
+
+/*
+Thing 4) Ranch
+5 properties:
+    1) number of animals (int)
+    2) size of ranch (float)
+    3) amount of profit per year (double)
+    4) number of doors (int)
+    5) number of tools (int)
+3 things it can do:
+    1) sell ranch
+    2) open the doors
+    3) free the animals
+/*
+
+/*
 Thing 5) Recording Room
 5 properties:
     1) number of instruments (int)
@@ -450,6 +443,20 @@ Thing 9) Studio Server Hardware
     1) send files
     2) connect to internet
     3) create backup
+ */
+
+/*
+Thing 10) Recording Studio
+5 properties: 
+    1) Recording Room (void)
+    2) Mixing Room (void)
+    3) Waiting Room (void)
+    4) Employees (int)
+    5) Studio Server Hardware (void)
+3 things it can do:
+    1) release album
+    2) record strings
+    3) monthly employee salary
  */
 
 /*
