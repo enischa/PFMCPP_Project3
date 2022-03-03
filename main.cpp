@@ -126,20 +126,9 @@ struct CarWash
  */
 
 
-/*
 
-Thing 1) Foley Studio
-5 properties:
-    1) number of foley pits (int)
-    2) number of shoes (int)
-    3) number of cloths (int)
-    4) sound effects recording per day (int)
-    5) edit sfx per day (int)
-3 things it can do:
-    1) record grass sfx
-    2) edit sfx and prepare to mix
-    3) upload sfx to cloud
- */
+
+
 struct FoleyStudio
 {
     FoleyStudio();
@@ -169,19 +158,7 @@ struct FoleyStudio
 
     Sneaker performedSfx;
 };
-/*
-Thing 2) Field Recorder
-5 properties:
-    1) number of inputs (int)
-    2) number of outputs (int)
-    3) size of Storage (float)
-    4) supported formats (float)
-    5) additional settings (int)
-3 things it can do:
-    1) instert KM184s to input 1-2
-    2) set 192 khz/32 bit-float
-    3)insert headphone
- */
+
 struct FieldRecorder
 {
     unsigned int inputs;
@@ -211,19 +188,7 @@ struct FieldRecorder
     NeumannKm184 ejected;
 };
 
-/*
-Thing 3) Smartphone
-5 properties:
-    1) type of CPU (float)
-    2) size of Storage (float)
-    3) number of Simcard (int)
-    4) size of RAM (float)
-    5) size of Screen (float)
-3 things it can do:
-    1) insert Sim-2
-    2) call Charles
-    3) open maps
- */
+
 struct SmartPhone
 {
     float typeOfCpu;
@@ -253,19 +218,7 @@ struct SmartPhone
 
     SimCard connected;
 };
-/*
-Thing 4) Ranch
-5 properties:
-    1) number of animals (int)
-    2) size of ranch (float)
-    3) amount of profit per year (double)
-    4) number of doors (int)
-    5) number of tools (int)
-3 things it can do:
-    1) sell ranch
-    2) open the doors
-    3) free the animals
-*/
+
 struct Ranch
 {
     int numberOfAnimals;
@@ -294,19 +247,7 @@ struct Ranch
     void freeTheAnimals(int animalNumbers = 66);
 };
 
-/*
-Thing 5) Recording Room
-5 properties:
-    1) number of instruments (int)
-    2) monthly air conditioner bill (double)
-    3) room name (std::string)
-    4) size of room (float)
-    5) number of cables (int)
-3 things it can do:
-    1) records some sounds
-    2) provides energy consumption
-    3) allows communication with the mix room
- */
+
 struct RecRoom
 {
     int instruments;
@@ -336,19 +277,7 @@ struct RecRoom
 
     DrumSet played;
 };
-/*
-Thing 6) Mixing Room
-5 properties:
-    1) room name (std::string)
-    2) size of room (float)
-    3) size of speakers (float)
-    4) room acoustic values (double)
-    5) ammount of power consumed (float)
-3 things it can do:
-    1) allows communication with the recording room
-    2) send files to server
-    3) connect to DSP racks
- */
+
 struct MixRoom
 {
     MixRoom();
@@ -380,19 +309,7 @@ struct MixRoom
 
     Speakers Listened;
 };
-/*
-Thing 7) Waiting Room
-5 properties:
-    1) number of managers (int)
-    2) monthly bill (double)
-    3) room name (std::string)
-    4) locked table (bool)
-    5) coffee machines (int)
-3 things it can do:
-    1) prepare to recording
-    2) give coffee to customers
-    3) set the alarm
- */
+
 struct WaitingRoom
 {
     int numbOfManagers;
@@ -420,19 +337,7 @@ struct WaitingRoom
 
     Manager2 jobDone;
 };
-/*
-Thing 8) Manager
-5 properties:
-    1) age (int)
-    2) height (double)
-    3) name (char)
-    4) gender (char)
-    5) start to work (double)
-3 things it can do:
-    1) keeps track of expenses
-    2) manages the studio
-    3) gets a job
- */
+
 struct Manager
 {
     int age;
@@ -459,19 +364,7 @@ struct Manager
 
     ManagerAbility talentDemonstrated;
 };
-/*
-Thing 9) Studio Server Hardware
-5 properties:
-    1) connection speed (float)
-    2) number of ethernet input (int)
-    3) ammount of power consumed (float)
-    4) daily data transfer (float)
-    5) brand (std::string)
-3 things it can do:
-    1) send files
-    2) connect to internet
-    3) create backup
- */
+
 struct ServerHardware
 {
     float connectionSpeed;
@@ -498,19 +391,7 @@ struct ServerHardware
 
     Hardware dataTransferDone;
 };
-/*
-Thing 10) Recording Studio
-5 properties:
-    1) Recording Room (void)
-    2) Mixing Room (void)
-    3) Waiting Room (void)
-    4) Employees (int)
-    5) Studio Server Hardware (void)
-3 things it can do:
-    1) release album
-    2) record strings
-    3) monthly employee salary
- */
+
 struct RecordingStudio
 {
     RecRoom recordingRoom;
@@ -522,8 +403,6 @@ struct RecordingStudio
     void releaseNewAlbum(Manager manager1, int targetReleaseAlbum = 22, std::string targetGenre = "Ambient, Drone");
     void recordStrings(RecRoom recording);
     void paySalary(Manager payAllOf, double totalSalary = 3233.20);
-
-    //3 member functions go here...
 };
 
 /*
