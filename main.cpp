@@ -243,7 +243,7 @@ Thing 2) Field Recorder
     2) set 192 khz/32 bit-float
     3)insert headphone
  */
-struct FiledRecorder
+struct FieldRecorder
 {
     unsigned int inputs;
     unsigned int outputs;
