@@ -574,31 +574,19 @@ Thing 10) Recording Studio
  */
 struct RecordingStudio
 {
-    void recRoom();
-    void mixRoom();
-    void waitingRoom();
-    int employees;
-    void studioServerHardware();
+    RecRoom recordingRoom;
+    MixRoom mixingRoom;
+    WaitingRoom waitingRoom;
+    Manager employees;
+    ServerHardware studioServerHardware;
 
-    struct V_studio
-    {
-        std::string studioName = "V STUDIO";
-        std::string owner = "Eda Seda";
-        int buildYear = 2008;
-        int totalReleasedAlbum = 341;
-        double openingTime = 13.00;
+    void releaseNewAlbum(Manager manager1, int targetReleaseAlbum = 22, std::string targetGenre = "Ambient, Drone");
+    void recordStrings(RecRoom recording);
+    void paySalary(Manager payAllOf, double totalSalary = 3233.20);
 
-        void getNewStudio();
-        void recruitStaff(int numberOfNewSraff = 3);
-        int calculateFoundationYear = 14;
-    };
-
-    void releaseAlbum(std::string genre = "Indie Pop", double pricingOfAlbum = 14.9);
-    void recordStrings(int numberOfStringInst = 3, int artists = 2);
-    void payEmployeeSalary(int numberOfEmployer = 5, double totalSalary = 29.344);
-
-    V_studio jobsDone;
+    //3 member functions go here...
 };
+
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
