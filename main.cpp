@@ -5,14 +5,14 @@ User-Defined Types
 
 Continue your work on branch Part1
 
-Purpose: The entire purpose of this 5-part project is to get you writing C++ code that compiles and to 
-reinforce the syntax habits that C++ requires.  
-What you create in this project will be used as the basis of Project 5 in the course.   
+Purpose: The entire purpose of this 5-part project is to get you writing C++ code that compiles and to
+reinforce the syntax habits that C++ requires.
+What you create in this project will be used as the basis of Project 5 in the course.
 
 ************************
 Part1 purpose:  Learn to write UDTs
 
-You are going to write 10 UDTs in project3.  
+You are going to write 10 UDTs in project3.
 Part1 will be broken up into 5 separate steps
     Part 1a: you will learn to think about an object in terms of its sub-objects.
     Part 1b: you will write 4 un-related UDTs in plain english
@@ -23,12 +23,12 @@ Part1 will be broken up into 5 separate steps
 
 Convert your 10 Plain-english UDTs into code.
 
-I recommend compiling after finishing each one and making sure it compiles 
-without errors or warnings before moving on to writing the next UDT. 
+I recommend compiling after finishing each one and making sure it compiles
+without errors or warnings before moving on to writing the next UDT.
 
 1) define an empty struct below your plain-english UDT. i.e.:
 
-Thing: Car Wash   
+Thing: Car Wash
     5 properties:
         - number of vacuum cleaners
         - number of eco-friendly cleaning supplies
@@ -53,45 +53,45 @@ struct CarWash
 2) Below your plain-english UDT, Copy your 5 properties & 3 actions into the empty struct body.
     - comment them out.
     - Do this for all 10 UDTs
-    
+
 3) declare your member variables and member functions underneath each plain-english comment in your struct's body.
     - give the member variables relevant data types
     - Do this for all 10 UDTs
     - if your functions return something other than 'void', add a comment explaining what is being returned.  see the example code below.
- 
+
 4) make the function parameter list for those member functions use some of your User-Defined Types
     - You'll write definitions/implementations for these functions in Project3 Part2
     - you'll call each of these functions in Project3 part3
     - Do this for all 10 UDTs
- 
-5) make 2 of the 10 user-defined types have a nested class.  
+
+5) make 2 of the 10 user-defined types have a nested class.
     - this nested class also needs 5 properties and 3 actions.
     - these nested classes are not considered one of your 10 UDTs.
     - this nested class must be related to the class it is nested inside
- 
-6) your 10th UDT's properties should be instances of your #5-#9 UDTs.   
+
+6) your 10th UDT's properties should be instances of your #5-#9 UDTs.
     - No primitives allowed!
- 
-7) After you finish defining each type, click the [run] button.  
-    Clear up any errors or warnings as best you can. 
+
+7) After you finish defining each type, click the [run] button.
+    Clear up any errors or warnings as best you can.
     if your code produces a [-Wpadded] warning, add '-Wno-padded' to the .replit file with the other compiler flags (-Weverything -Wno-missing-prototypes etc etc)
  */
 
-/*
- example:  
+ /*
+  example:
 
-Thing: Car Wash   
-    5 properties:
-        - number of vacuum cleaners
-        - number of eco-friendly cleaning supplies
-        - stores the amount of water used per week.
-        - stores amount of profit made per week
-        - number of cars serviced per day
-    3 things it can do:
-        - wash and wax car
-        - charge customer
-        - detail the car interior
- */
+ Thing: Car Wash
+     5 properties:
+         - number of vacuum cleaners
+         - number of eco-friendly cleaning supplies
+         - stores the amount of water used per week.
+         - stores amount of profit made per week
+         - number of cars serviced per day
+     3 things it can do:
+         - wash and wax car
+         - charge customer
+         - detail the car interior
+  */
 
 #include <iostream>
 #include <string>
@@ -101,26 +101,26 @@ struct CarWash //                                   1) define an empty struct fo
     //number of vacuum cleaners                     2) copied and commented-out plain-english property
     int numVacuumCleaners = 3; //                   3) member variables with relevant data types.
     //number of eco-friendly cleaning supplies      
-    int numEcoFriendlyCleaningSupplies = 20;     
+    int numEcoFriendlyCleaningSupplies = 20;
     //stores the amount of water used per week.     
-    float waterUsedPerWeek = 200.f;            
+    float waterUsedPerWeek = 200.f;
     //stores amount of profit made per week         
-    float profitPerWeek = 495.95f;               
+    float profitPerWeek = 495.95f;
     //number of cars serviced per day               
-    int numberOfCarsServiced = 10;               
-    
+    int numberOfCarsServiced = 10;
+
     struct Car //5)                                 Note that the nested type 'Car' is related to the 'CarWash' 
     {
         //2) member variables with relevant data types.  the names are appropriate for the U.D.T.'s purpose.
         bool isAPickupTruck = false;
-        float gasMileage = 26.2f;        
+        float gasMileage = 26.2f;
         int year = 1985;
         std::string manufacturer = "Toyota";
         std::string model = "Corolla";
 
         //3) a member function whose parameter has a default value.
         //the parameter name is related to the work the function will perform.
-        void fillTank(double fuelAmountInGallons = 2.0);  
+        void fillTank(double fuelAmountInGallons = 2.0);
         void breakDown(std::string failureType, bool requiresTow = false);
         int getMilesTraveledAnnually(bool includeUberLyftTrips); //3) returns the number of miles traveled
     };
@@ -131,9 +131,9 @@ struct CarWash //                                   1) define an empty struct fo
     float chargeCustomer(float discountPercentage); //3) returns the total amount charged.
     //detail the car interior
     void detailInterior(Car carB);
-    
+
     //5) a member variable whose type is a UDT.
-    Car carBeingServiced;  
+    Car carBeingServiced;
 
     /*
     Pay attention to the member functions that take an instance of 'Car'
@@ -141,9 +141,9 @@ struct CarWash //                                   1) define an empty struct fo
 
     It makes sense to pass a Car to the function 'washAndWaxCar' because car washes service MANY cars
     However, they only service ONE car at a time.
-    the carBeingServiced's value would change every time you wash and wax the car. 
+    the carBeingServiced's value would change every time you wash and wax the car.
 
-    I see many students who write code emulating this format, but their usage does not make logical sense.  
+    I see many students who write code emulating this format, but their usage does not make logical sense.
     Consider the following snippet:
 
     struct SoccerTeam
@@ -155,7 +155,7 @@ struct CarWash //                                   1) define an empty struct fo
 
         // train their skills
         void trainPlayerSkills(Manager managerA);
-    
+
         Manager teamManager;
     };
 
@@ -172,7 +172,7 @@ struct CarWash //                                   1) define an empty struct fo
         };
 
         void hireNewManager(Manager newManager);
-    
+
         Manager teamManager;
     };
 
@@ -212,16 +212,16 @@ struct FoleyStudio
 
     struct Sneaker
     {
-      Sneaker();
-      bool isThisNew = false;
-      std::string brand = "Adidas";
-      std::string model = "Superstar";
-      double shoeSize = 42.5;
-      bool isThisLaceUp = true;
-      
-      void getWearSneaker(int legs = 2, std::string gender = "Female");
-      float setupMicVolume = 32.f;
-      void performFeetSfx(double tempo = 100.20);
+        Sneaker();
+        std::string style = "Classic, Sporty, Minimalist";
+        std::string brand = "Adidas";
+        std::string model = "Superstar";
+        double shoeSize = 42.5;
+        std::string material = "Leather, Rubber Sole";
+
+        void getWearSneaker(int legs = 2, std::string gender = "Female");
+        void setupMic(float micVolume = 32.f, std::string micSettings = "Low-cut");
+        void performFeetSfx(double tempo = 100.20);
     };
 
     void recordGrassSfx(int sfxRecording);
@@ -243,33 +243,33 @@ Thing 2) Field Recorder
     2) set 192 khz/32 bit-float
     3)insert headphone
  */
-struct filedRecorder
+struct FiledRecorder
 {
-  unsigned int inputs;
-  unsigned int outputs;
-  float sizeOfStorage;
-  double supportedFormats;
-  unsigned int settings;
+    unsigned int inputs;
+    unsigned int outputs;
+    float sizeOfStorage;
+    double supportedFormats;
+    unsigned int settings;
 
-  struct neumannKm184
-  {
-    neumannKm184();
-    bool isThisPair = true;
-    int modelYear = 2018;
-    void frequencyRange(float lowFreq = 20.f, float highFreq = 20.000);
-    double pricing = 829.20;
-    bool isThisNew = false;
+    struct NeumannKm184
+    {
+        NeumannKm184();
+        bool isThisPair = true;
+        int modelYear = 2018;
+        float lowFreq = 20.f;
+        double pricing = 829.20;
+        bool isThisNew = false;
 
-    void openBox();
-    void selectCable(int numberOfCable = 2, std::string cableBrand = "Neutrik"); 
-    void insertCable(std::string cableType = "XLR");
-  };
+        void openBox();
+        void selectCable(int numberOfCable = 2, std::string cableBrand = "Neutrik");
+        void insertCable(std::string cableType = "XLR");
+    };
 
-  void selectRecordingFormat(float sampleRate = 192.f, int bitRate = 32);
-  void startRecording();
-  void ejectMics(neumannKm184 mono1, neumannKm184 mono2);
+    void selectRecordingFormat(float sampleRate = 192.f, int bitRate = 32);
+    void startRecording();
+    void ejectMics(NeumannKm184 mono1, NeumannKm184 mono2);
 
-  neumannKm184 ejected; 
+    NeumannKm184 ejected;
 };
 
 /*
@@ -285,34 +285,34 @@ Thing 3) Smartphone
     2) call Charles
     3) open maps
  */
-struct smartPhone
+struct SmartPhone
 {
-  float typeOfCpu;
-  float sizeOfStorage;
-  int numbOfSim;
-  float Ram;
-  float screen;
+    float typeOfCpu;
+    float sizeOfStorage;
+    int numbOfSim;
+    float Ram;
+    float screen;
 
-  struct simCard
-  {
-    simCard();
+    struct SimCard
+    {
+        SimCard();
 
-    std::string operatorBrand = "Vodafone";
-    double height = 3.37;
-    double width = 2.12;
-    double depth = 0.029;
-    int productYear = 2015;
+        std::string operatorBrand = "Vodafone";
+        double height = 3.37;
+        double width = 2.12;
+        double depth = 0.029;
+        int productYear = 2015;
 
-    void getAndBuy(double pricing = 77.1);
-    bool unpack = true;
-    void insertSimSlot(int simCard);
-  };
+        void getAndBuy(double pricing = 77.1);
+        void unpack();
+        void insertSimSlot(int simCard);
+    };
 
-  void insertPhone(bool insertSimSlot = true, bool openPhone = true);
-  void callCharles(bool openCallScreen, int phoneNumber, bool clickCallButton);
-  void openMaps(std::string mapName = "Yandex Maps", bool enter = true);  
+    void insertPhone(bool insertSimSlot = true, bool openPhone = true);
+    void callCharles(bool openCallScreen, int phoneNumber, bool clickCallButton);
+    void openMaps(std::string mapName = "Yandex Maps", bool enter = true);
 
-  simCard connected;
+    SimCard connected;
 };
 /*
 Thing 4) Ranch
@@ -327,39 +327,39 @@ Thing 4) Ranch
     2) open the doors
     3) free the animals
 */
-struct ranch
+struct Ranch
 {
-  int numberOfAnimals;
-  float sizeOfRanch;
-  double amountOfProfitYear;
-  int numberOfDoors;
-  int numberOfTools;
+    int numberOfAnimals;
+    float sizeOfRanch;
+    double amountOfProfitYear;
+    int numberOfDoors;
+    int numberOfTools;
 
-  struct ranchMainA
-  {
-    ranchMainA();
+    struct RanchMainA
+    {
+        RanchMainA();
 
-    std::string name = "Zeleia";
-    double height = 223.12;
-    double width = 422.64;
-    std::string directorName = "Asli Yalcin";
-    double todayValue = 354.644;
+        std::string name = "Zeleia";
+        double height = 223.12;
+        double width = 422.64;
+        std::string directorName = "Asli Yalcin";
+        double todayValue = 354.644;
 
-    void findCustomer(int totalTarget = 6);
-    void clearRanch(int numberOfParts = 4, bool getCleanPart3 = true);
-    void defineValue(double initialPrice = 271.640);
-  };  
+        void findCustomer(int totalTarget = 6);
+        void clearRanch(int numberOfParts = 4, bool getCleanPart3 = true);
+        void defineValue(double initialPrice = 271.640);
+    };
 
-  void sellRanch(std::string customerName = "Leyla", int age = 63);
-  void openTheDoors(int numbersOfDoors = 2);
-  void freeTheAnimals(int animalNumbers = 66);
+    void sellRanch(std::string customerName = "Leyla", int age = 63);
+    void openTheDoors(int numbersOfDoors = 2);
+    void freeTheAnimals(int animalNumbers = 66);
 };
 
 /*
 Thing 5) Recording Room
 5 properties:
     1) number of instruments (int)
-    2) monthly air conditioner bill (double) 
+    2) monthly air conditioner bill (double)
     3) room name (std::string)
     4) size of room (float)
     5) number of cables (int)
@@ -368,34 +368,34 @@ Thing 5) Recording Room
     2) provides energy consumption
     3) allows communication with the mix room
  */
-struct recRoom
+struct RecRoom
 {
-  int instruments;
-  double airConditionerBill;
-  std::string roomName;
-  float sizeOfRoom;
-  int numbOfCable;
+    int instruments;
+    double airConditionerBill;
+    std::string roomName;
+    float sizeOfRoom;
+    int numbOfCable;
 
-  struct drumSet
-  {  
-    drumSet();
+    struct DrumSet
+    {
+        DrumSet();
 
-    std::string brand = "DW";
-    std::string model = "Frequient Flyer";
-    int kickSize = 20;
-    int snareSize = 14;
-    int floorTomSize = 14;
+        std::string brand = "DW";
+        std::string model = "Frequient Flyer";
+        int kickSize = 20;
+        int snareSize = 14;
+        int floorTomSize = 14;
 
-    void kickTheKick(int bpm);
-    void closeTheHihat(int bpm);
-    void kickTheSnare(int bpm);
-  };
+        void kickTheKick(int bpm);
+        void closeTheHihat(int bpm);
+        void kickTheSnare(int bpm);
+    };
 
-  void recordDrum(float sampleRate = 44.1f, int bitRate = 16);
-  void openTheLight();
-  void communicateToMixRoom(drumSet drumBeats);
+    void recordDrum(float sampleRate = 44.1f, int bitRate = 16);
+    void openTheLight();
+    void communicateToMixRoom(DrumSet drumBeats);
 
-  drumSet played;
+    DrumSet played;
 };
 /*
 Thing 6) Mixing Room
@@ -410,36 +410,36 @@ Thing 6) Mixing Room
     2) send files to server
     3) connect to DSP racks
  */
-struct mixRoom
+struct MixRoom
 {
-  mixRoom();
+    MixRoom();
 
-  std::string roomName;
-  void sizeOfRoom(float height, float width);
-  float sizeOfSpeaker;
-  double roomAcousticValue;
-  float amountOfPowerConsumed;
+    std::string roomName;
+    void sizeOfRoom(float height, float width);
+    float sizeOfSpeaker;
+    double roomAcousticValue;
+    float amountOfPowerConsumed;
 
-  struct speakers
-  {
-    speakers();
+    struct Speakers
+    {
+        Speakers();
 
-    std::string brand = "Dynaudio";
-    std::string model = "LYD5";
-    double speakerWright = 5.7;
-    double crossoverFreq = 5.2;
-    int maxSpl = 106;
+        std::string brand = "Dynaudio";
+        std::string model = "LYD5";
+        double speakerWright = 5.7;
+        double crossoverFreq = 5.2;
+        int maxSpl = 106;
 
-    void insertPower();
-    void settingSensivity(int dbSettings1 = 6, int dbSettings2 = -6);
-    void insertSoundCard(int inputNumber = 3);
-  };
+        void insertPower();
+        void settingSensivity(int dbSettings1 = 6, int dbSettings2 = -6);
+        void insertSoundCard(int inputNumber = 3);
+    };
 
-  void allowsCommunication(speakers listenSpikers);
-  void sendFiles(std::string fileType = ".wav", int numberOfFiles = 42);
-  void connectToDsp(int numberOfDsp = 6);
+    void allowsCommunication(Speakers listenSpikers);
+    void sendFiles(std::string fileType = ".wav", int numberOfFiles = 42);
+    void connectToDsp(int numberOfDsp = 6);
 
-  speakers Listened;
+    Speakers Listened;
 };
 /*
 Thing 7) Waiting Room
@@ -454,32 +454,32 @@ Thing 7) Waiting Room
     2) give coffee to customers
     3) set the alarm
  */
-struct waitingRoom
+struct WaitingRoom
 {
-  int numbOfManagers;
-  double monthlyBill;
-  std::string roomName;
-  bool lockedTable;
-  int coffeeMachines;
+    int numbOfManagers;
+    double monthlyBill;
+    std::string roomName;
+    bool lockedTable;
+    int coffeeMachines;
 
-  struct manager2
-  {
-    std::string managerName = "Saliha";
-    double monthlyFee = 4250.50;
-    bool isThisIntern = true;
-    int old = 23;
-    int dayOfWork = 5;
-  
-    double calculateDailySalary = monthlyFee / 30;
-    double checkTheBankAcconut;
-    void withdrawMoney(std::string accountName = "Personal", int accountNumber = 2);
-  };
+    struct Manager2
+    {
+        std::string managerName = "Saliha";
+        int monthlyFee = 4250;
+        bool isThisIntern = true;
+        int old = 23;
+        int dayOfWork = 5;
 
-  void prepareToRec(int numberOfCabinet = 3, double startTime = 22.15);
-  void giveCoffee(std::string coffeType = "Arabica");
-  void setTheAlarm(bool enterPin = true, bool lockTheDoor = true);
+        void insertTheCardAtm(int bankPassword = 2323);
+        void checkBankAccount(double accountLimit = 2333.20, double availableLimit = 1899.20);
+        void withdrawMoney(std::string accountName = "Personal", int accountNumber = 2);
+    };
 
-  manager2 jobDone;
+    void prepareToRec(int numberOfCabinet = 3, double startTime = 22.15);
+    void giveCoffee(std::string coffeType = "Arabica");
+    void setTheAlarm(bool enterPin = true, bool lockTheDoor = true);
+
+    Manager2 jobDone;
 };
 /*
 Thing 8) Manager
@@ -494,31 +494,31 @@ Thing 8) Manager
     2) manages the studio
     3) gets a job
  */
-struct manager
+struct Manager
 {
-  int age;
-  double height;
-  std::string name;
-  std::string gender;
-  double startToWrok;
+    int age;
+    double height;
+    std::string name;
+    std::string gender;
+    double startToWrok;
 
-  struct managerAbility
-  {
-    double degrees = 3.67;
-    bool recordingknowHow = true;
-    std::string school = "Bahcesehir University";
-    std::string schoolDepartment = "Communication";
-    int dateOfGraduation = 2017;
+    struct ManagerAbility
+    {
+        double degrees = 3.67;
+        bool recordingknowHow = true;
+        std::string school = "Bahcesehir University";
+        std::string schoolDepartment = "Communication";
+        int dateOfGraduation = 2017;
 
-    double wakeUp = 07.10;
-    double enterTheAlarmPin = 3321;
-    double payTheMagazines = 13.2;
-  };
-  void keepTrackOfExpenses(double electricityBill = 322.3, double waterBill = 63.2);
-  void openTheDoors(bool mixingRoomDoor = true, bool recordingRoomDoor = false);
-  void callTheCustomer(std::string customerName = "Haktan", int customerNumber = 534855775);
+        void wakeUp(double wakeUpTime = 07.10);
+        void enterTheAlarmPin(double alarmPin = 3321);
+        void payTheMagazines(int magazinePrice = 13);
+    };
+    void keepTrackOfExpenses(double electricityBill = 322.3, double waterBill = 63.2);
+    void openTheDoors(bool mixingRoomDoor = true, bool recordingRoomDoor = false);
+    void callTheCustomer(std::string customerName = "Haktan", int customerNumber = 534855775);
 
-  managerAbility talentDemonstrated;
+    ManagerAbility talentDemonstrated;
 };
 /*
 Thing 9) Studio Server Hardware
@@ -533,35 +533,35 @@ Thing 9) Studio Server Hardware
     2) connect to internet
     3) create backup
  */
-struct serverHardware
+struct ServerHardware
 {
-  float connectionSpeed;
-  int numberOfEthernetIn;
-  float amountOfPowerCons;
-  float dailyDataTransfer;
-  std::string brand;
+    float connectionSpeed;
+    int numberOfEthernetIn;
+    float amountOfPowerCons;
+    float dailyDataTransfer;
+    std::string brand;
 
-  struct hardware
-  {
-    std::string brand = "DELL";
-    std::string model = "DL360";
-    int modelYear = 2014;
-    double ramType = 256.33;
-    std::string ssdType = "SSD";
+    struct Hardware
+    {
+        std::string brand = "DELL";
+        std::string model = "DL360";
+        int modelYear = 2014;
+        double ramType = 256.33;
+        std::string ssdType = "SSD";
 
-    void connectToPower(std::string conectionType = "EU Type");
-    void openTheHardware();
-    void enterTheOS(std::string nickname = "vsl", int osPassword = 283742);
-  };
-  void sendFiles(std::string fileType = ".wav", float fileSize = 462.f);
-  void connectTheWifi(std::string wifiName = "sikildim", int wifiPassword = 35359200);
-  void createBackUp(serverHardware hardware2);
+        void connectToPower(std::string conectionType = "EU Type");
+        void openTheHardware();
+        void enterTheOS(std::string nickname = "vsl", int osPassword = 283742);
+    };
+    void sendFiles(std::string fileType = ".wav", float fileSize = 462.f);
+    void connectTheWifi(std::string wifiName = "sikildim", int wifiPassword = 35359200);
+    void createBackUp(ServerHardware hardware2);
 
-  hardware dataTransferDone;
+    Hardware dataTransferDone;
 };
 /*
 Thing 10) Recording Studio
-5 properties: 
+5 properties:
     1) Recording Room (void)
     2) Mixing Room (void)
     3) Waiting Room (void)
@@ -572,39 +572,39 @@ Thing 10) Recording Studio
     2) record strings
     3) monthly employee salary
  */
-struct recordingStudio
+struct RecordingStudio
 {
-  void recRoom();
-  void mixRoom();
-  void waitingRoom();
-  int employees;
-  void studioServerHardware();
+    void recRoom();
+    void mixRoom();
+    void waitingRoom();
+    int employees;
+    void studioServerHardware();
 
-  struct v_studio
-  {
-    std::string studioName = "V STUDIO";
-    std::string owner = "Eda Seda";
-    int buildYear = 2008;
-    int totalReleasedAlbum = 341;
-    double openingTime = 13.00;
+    struct V_studio
+    {
+        std::string studioName = "V STUDIO";
+        std::string owner = "Eda Seda";
+        int buildYear = 2008;
+        int totalReleasedAlbum = 341;
+        double openingTime = 13.00;
 
-    void getNewStudio();
-    void recruitStaff(int numberOfNewSraff = 3);
-    int calculateFoundationYear = 14;
-  };
-  
-  void releaseAlbum(std::string genre = "Indie Pop", double pricingOfAlbum = 14.9);
-  void recordStrings(int numberOfStringInst = 3, int artists = 2);
-  void payEmployeeSalary(int numberOfEmployer = 5, double totalSalary = 29.344);
+        void getNewStudio();
+        void recruitStaff(int numberOfNewSraff = 3);
+        int calculateFoundationYear = 14;
+    };
 
-  v_studio jobsDone;
+    void releaseAlbum(std::string genre = "Indie Pop", double pricingOfAlbum = 14.9);
+    void recordStrings(int numberOfStringInst = 3, int artists = 2);
+    void payEmployeeSalary(int numberOfEmployer = 5, double totalSalary = 29.344);
+
+    V_studio jobsDone;
 };
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
  Commit your changes by clicking on the Source Control panel on the left, entering a message, and click [Commit and push].
- 
- If you didn't already: 
+
+ If you didn't already:
     Make a pull request after you make your first commit
     pin the pull request link and this repl.it link to our DM thread in a single message.
 
