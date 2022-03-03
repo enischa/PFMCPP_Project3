@@ -201,7 +201,35 @@ Thing 1) Foley Studio
     2) edit sfx and prepare to mix
     3) upload sfx to cloud
  */
+struct FoleyStudio
+{
+    FoleyStudio();
+    unsigned int numberOfPits;
+    unsigned int numberOfShoes;
+    unsigned int numberOfCloths;
+    unsigned int sfxPerDay;
+    unsigned int sfxEditPerDay;
 
+    struct Sneaker
+    {
+      Sneaker();
+      bool isThisNew = false;
+      std::string brand = "Adidas";
+      std::string model = "Superstar";
+      double shoeSize = 42.5;
+      bool isThisLaceUp = true;
+      
+      void getWearSneaker(int legs = 2, std::string gender = "Female");
+      float setupMicVolume = 32.f;
+      void performFeetSfx(double tempo = 100.20);
+    };
+
+    void recordGrassSfx(int sfxRecording);
+    void prepareToMixing(int sfxQuantity, float sfxSpecs);
+    void uploadSfxToCloud(int totalSfx = 2342);
+
+    Sneaker performedSfx;
+};
 /*
 Thing 2) Field Recorder
 5 properties:
@@ -215,6 +243,34 @@ Thing 2) Field Recorder
     2) set 192 khz/32 bit-float
     3)insert headphone
  */
+struct filedRecorder
+{
+  unsigned int inputs;
+  unsigned int outputs;
+  float sizeOfStorage;
+  double supportedFormats;
+  unsigned int settings;
+
+  struct neumannKm184
+  {
+    neumannKm184();
+    bool isThisPair = true;
+    int modelYear = 2018;
+    void frequencyRange(float lowFreq = 20.f, float highFreq = 20.000);
+    double pricing = 829.20;
+    bool isThisNew = false;
+
+    void openBox();
+    void selectCable(int numberOfCable = 2, std::string cableBrand = "Neutrik"); 
+    void insertCable(std::string cableType = "XLR");
+  };
+
+  void selectRecordingFormat(float sampleRate = 192.f, int bitRate = 32);
+  void startRecording();
+  void ejectMics(neumannKm184 mono1, neumannKm184 mono2);
+
+  neumannKm184 ejected; 
+};
 
 /*
 Thing 3) Smartphone
@@ -229,7 +285,35 @@ Thing 3) Smartphone
     2) call Charles
     3) open maps
  */
+struct smartPhone
+{
+  float typeOfCpu;
+  float sizeOfStorage;
+  int numbOfSim;
+  float Ram;
+  float screen;
 
+  struct simCard
+  {
+    simCard();
+
+    std::string operatorBrand = "Vodafone";
+    double height = 3.37;
+    double width = 2.12;
+    double depth = 0.029;
+    int productYear = 2015;
+
+    void getAndBuy(double pricing = 77.1);
+    bool unpack = true;
+    void insertSimSlot(int simCard);
+  };
+
+  void insertPhone(bool insertSimSlot = true, bool openPhone = true);
+  void callCharles(bool openCallScreen, int phoneNumber, bool clickCallButton);
+  void openMaps(std::string mapName = "Yandex Maps", bool enter = true);  
+
+  simCard connected;
+};
 /*
 Thing 4) Ranch
 5 properties:
@@ -242,7 +326,34 @@ Thing 4) Ranch
     1) sell ranch
     2) open the doors
     3) free the animals
-/*
+*/
+struct ranch
+{
+  int numberOfAnimals;
+  float sizeOfRanch;
+  double amountOfProfitYear;
+  int numberOfDoors;
+  int numberOfTools;
+
+  struct ranchMainA
+  {
+    ranchMainA();
+
+    std::string name = "Zeleia";
+    double height = 223.12;
+    double width = 422.64;
+    std::string directorName = "Asli Yalcin";
+    double todayValue = 354.644;
+
+    void findCustomer(int totalTarget = 6);
+    void clearRanch(int numberOfParts = 4, bool getCleanPart3 = true);
+    void defineValue(double initialPrice = 271.640);
+  };  
+
+  void sellRanch(std::string customerName = "Leyla", int age = 63);
+  void openTheDoors(int numbersOfDoors = 2);
+  void freeTheAnimals(int animalNumbers = 66);
+};
 
 /*
 Thing 5) Recording Room
@@ -257,7 +368,35 @@ Thing 5) Recording Room
     2) provides energy consumption
     3) allows communication with the mix room
  */
+struct recRoom
+{
+  int instruments;
+  double airConditionerBill;
+  std::string roomName;
+  float sizeOfRoom;
+  int numbOfCable;
 
+  struct drumSet
+  {  
+    drumSet();
+
+    std::string brand = "DW";
+    std::string model = "Frequient Flyer";
+    int kickSize = 20;
+    int snareSize = 14;
+    int floorTomSize = 14;
+
+    void kickTheKick(int bpm);
+    void closeTheHihat(int bpm);
+    void kickTheSnare(int bpm);
+  };
+
+  void recordDrum(float sampleRate = 44.1f, int bitRate = 16);
+  void openTheLight();
+  void communicateToMixRoom(drumSet drumBeats);
+
+  drumSet played;
+};
 /*
 Thing 6) Mixing Room
 5 properties:
@@ -271,7 +410,37 @@ Thing 6) Mixing Room
     2) send files to server
     3) connect to DSP racks
  */
+struct mixRoom
+{
+  mixRoom();
 
+  std::string roomName;
+  void sizeOfRoom(float height, float width);
+  float sizeOfSpeaker;
+  double roomAcousticValue;
+  float amountOfPowerConsumed;
+
+  struct speakers
+  {
+    speakers();
+
+    std::string brand = "Dynaudio";
+    std::string model = "LYD5";
+    double speakerWright = 5.7;
+    double crossoverFreq = 5.2;
+    int maxSpl = 106;
+
+    void insertPower();
+    void settingSensivity(int dbSettings1 = 6, int dbSettings2 = -6);
+    void insertSoundCard(int inputNumber = 3);
+  };
+
+  void allowsCommunication(speakers listenSpikers);
+  void sendFiles(std::string fileType = ".wav", int numberOfFiles = 42);
+  void connectToDsp(int numberOfDsp = 6);
+
+  speakers Listened;
+};
 /*
 Thing 7) Waiting Room
 5 properties:
@@ -285,7 +454,33 @@ Thing 7) Waiting Room
     2) give coffee to customers
     3) set the alarm
  */
+struct waitingRoom
+{
+  int numbOfManagers;
+  double monthlyBill;
+  std::string roomName;
+  bool lockedTable;
+  int coffeeMachines;
 
+  struct manager2
+  {
+    std::string managerName = "Saliha";
+    double monthlyFee = 4250.50;
+    bool isThisIntern = true;
+    int old = 23;
+    int dayOfWork = 5;
+  
+    double calculateDailySalary = monthlyFee / 30;
+    double checkTheBankAcconut;
+    void withdrawMoney(std::string accountName = "Personal", int accountNumber = 2);
+  };
+
+  void prepareToRec(int numberOfCabinet = 3, double startTime = 22.15);
+  void giveCoffee(std::string coffeType = "Arabica");
+  void setTheAlarm(bool enterPin = true, bool lockTheDoor = true);
+
+  manager2 jobDone;
+};
 /*
 Thing 8) Manager
 5 properties:
@@ -299,7 +494,32 @@ Thing 8) Manager
     2) manages the studio
     3) gets a job
  */
+struct manager
+{
+  int age;
+  double height;
+  std::string name;
+  std::string gender;
+  double startToWrok;
 
+  struct managerAbility
+  {
+    double degrees = 3.67;
+    bool recordingknowHow = true;
+    std::string school = "Bahcesehir University";
+    std::string schoolDepartment = "Communication";
+    int dateOfGraduation = 2017;
+
+    double wakeUp = 07.10;
+    double enterTheAlarmPin = 3321;
+    double payTheMagazines = 13.2;
+  };
+  void keepTrackOfExpenses(double electricityBill = 322.3, double waterBill = 63.2);
+  void openTheDoors(bool mixingRoomDoor = true, bool recordingRoomDoor = false);
+  void callTheCustomer(std::string customerName = "Haktan", int customerNumber = 534855775);
+
+  managerAbility talentDemonstrated;
+};
 /*
 Thing 9) Studio Server Hardware
 5 properties:
@@ -313,7 +533,32 @@ Thing 9) Studio Server Hardware
     2) connect to internet
     3) create backup
  */
+struct serverHardware
+{
+  float connectionSpeed;
+  int numberOfEthernetIn;
+  float amountOfPowerCons;
+  float dailyDataTransfer;
+  std::string brand;
 
+  struct hardware
+  {
+    std::string brand = "DELL";
+    std::string model = "DL360";
+    int modelYear = 2014;
+    double ramType = 256.33;
+    std::string ssdType = "SSD";
+
+    void connectToPower(std::string conectionType = "EU Type");
+    void openTheHardware();
+    void enterTheOS(std::string nickname = "vsl", int osPassword = 283742);
+  };
+  void sendFiles(std::string fileType = ".wav", float fileSize = 462.f);
+  void connectTheWifi(std::string wifiName = "sikildim", int wifiPassword = 35359200);
+  void createBackUp(serverHardware hardware2);
+
+  hardware dataTransferDone;
+};
 /*
 Thing 10) Recording Studio
 5 properties: 
@@ -327,8 +572,33 @@ Thing 10) Recording Studio
     2) record strings
     3) monthly employee salary
  */
+struct recordingStudio
+{
+  void recRoom();
+  void mixRoom();
+  void waitingRoom();
+  int employees;
+  void studioServerHardware();
 
+  struct v_studio
+  {
+    std::string studioName = "V STUDIO";
+    std::string owner = "Eda Seda";
+    int buildYear = 2008;
+    int totalReleasedAlbum = 341;
+    double openingTime = 13.00;
 
+    void getNewStudio();
+    void recruitStaff(int numberOfNewSraff = 3);
+    int calculateFoundationYear = 14;
+  };
+  
+  void releaseAlbum(std::string genre = "Indie Pop", double pricingOfAlbum = 14.9);
+  void recordStrings(int numberOfStringInst = 3, int artists = 2);
+  void payEmployeeSalary(int numberOfEmployer = 5, double totalSalary = 29.344);
+
+  v_studio jobsDone;
+};
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
